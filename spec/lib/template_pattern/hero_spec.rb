@@ -2,6 +2,8 @@ require 'spec_helper'
 
 describe Hero do
   context 'Default Hero' do
+    subject { Hero.new }
+
     it 'has default damage rating of "10"' do
       expect(subject.damage).to eq 10
     end
@@ -12,6 +14,8 @@ describe Hero do
   end
 
   context 'Warrior' do
+    subject { Hero.new :warrior }
+
     it 'has a default damage rating of "15"' do
       expect(subject.damage).to eq 15
     end
