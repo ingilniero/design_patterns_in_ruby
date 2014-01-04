@@ -6,4 +6,8 @@ class Mage < Hero
   def occupation_abilities
     [:magic_arrow]
   end
+
+  def unique_greeting_line
+    'Mage here!'
+  end
 end

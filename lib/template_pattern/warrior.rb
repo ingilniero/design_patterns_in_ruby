@@ -6,5 +6,9 @@ class Warrior < Hero
   def occupation_abilities
     [:strike]
   end
+
+  def unique_greeting_line
+    'Warrior is ready'
+  end
 end
 
