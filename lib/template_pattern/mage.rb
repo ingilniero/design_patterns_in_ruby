@@ -1,9 +1,9 @@
-class Hero
+class Mage
   attr_reader :damage, :abilities
 
   def initialize
-    @damage = 10
-    @abilities = []
+    @damage = 7
+    @abilities = [:magic_arrow]
   end
 
   def attack
