@@ -1,11 +1,13 @@
 class Hero
-  attr_reader :damage
+  attr_reader :damage, :abilities
 
   def initialize(occupation = nil)
     if occupation == :warrior
       @damage = 15
+      @abilities = [:strike]
     else
       @damage = 10
+      @abilities = []
     end
   end
 
