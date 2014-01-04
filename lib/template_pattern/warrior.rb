@@ -1,7 +1,10 @@
 class Warrior < Hero
-  def initialize
-    @damage = 15
-    @abilities = [:strike]
+  def damage_rating
+    15
+  end
+
+  def occupation_abilities
+    [:strike]
   end
 end
 
