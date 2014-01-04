@@ -1,13 +1,7 @@
-class Warrior
-  attr_reader :damage, :abilities
-
+class Warrior < Hero
   def initialize
     @damage = 15
     @abilities = [:strike]
-  end
-
-  def attack
-    "Attacked dealing #{damage} damage"
   end
 end
 
