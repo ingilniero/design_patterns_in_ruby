@@ -9,4 +9,8 @@ describe Mage do
   it 'has special ability Magic Arrow' do
     expect(subject.abilities).to include(:magic_arrow)
   end
+
+  it 'greets other characters' do
+    expect(subject.greet).to eq [ 'Hello', 'Mage here!' ]
+  end
 end
