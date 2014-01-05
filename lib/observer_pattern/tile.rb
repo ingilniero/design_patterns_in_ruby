@@ -1,29 +1,35 @@
+module Observable
+  attr_reader :observers
+
+  def initialize(attrs = {})
+    @observers = []
+    custom_attributes(attrs)
+  end
+
+  def subscribe(observer)
+    @observers << observer
+  end
+
+  def notify_observers
+    observers.each { |observer| observer.update 4 }
+  end
+
+end
+
 module Observer
   class Tile
-    attr_reader :observers
+    include Observable
 
-    def initialize(attrs = {})
+    def custom_attributes(attrs)
       @cursed = attrs.fetch(:cursed, false)
-      @observers = []
     end
 
     def cursed?
       @cursed
     end
 
-    def subscribe(observer)
-      @observers << observer
-    end
-
     def activate_curse
-      notify
+      notify_observers
     end
-
-    private
-
-    def notify
-      observers.each { |observer| observer.update 4 }
-    end
-
   end
 end
