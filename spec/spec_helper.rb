@@ -1,6 +1,7 @@
 require_relative '../lib/template_pattern/hero'
 require_relative '../lib/template_pattern/warrior'
 require_relative '../lib/template_pattern/mage'
+require_relative '../lib/strategy_pattern/hero'
 
 RSpec.configure do |config|
   config.treat_symbols_as_metadata_keys_with_true_values = true
