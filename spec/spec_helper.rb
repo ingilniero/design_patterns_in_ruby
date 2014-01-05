@@ -5,6 +5,7 @@ require_relative '../lib/strategy_pattern/hero'
 require_relative '../lib/strategy_pattern/battle_stats'
 require_relative '../lib/strategy_pattern/skills_stats'
 require_relative '../lib/observer_pattern/hero'
+require_relative '../lib/observer_pattern/tile'
 
 RSpec.configure do |config|
   config.treat_symbols_as_metadata_keys_with_true_values = true
