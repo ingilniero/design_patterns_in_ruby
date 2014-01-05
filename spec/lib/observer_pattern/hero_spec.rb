@@ -4,6 +4,14 @@ describe Observer::Hero do
 
   let(:tile) { double('tile', cursed?: true ) }
 
+  it 'has default health equal to 10' do
+    expect(subject.health).to eq 10
+  end
+
+  describe '#damage' do
+    it { expect{ subject.damage(4) }.to change{ subject.health }.by(-4) }
+  end
+
   describe '#cursed?' do
     context 'when is not cursed' do
       it { expect(subject.cursed?).to be_false }
