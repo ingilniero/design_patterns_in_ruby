@@ -9,7 +9,7 @@ module Observer
     end
 
     def discover(tile)
-      @cursed = true
+      @cursed = true if tile.cursed?
     end
   end
 end
