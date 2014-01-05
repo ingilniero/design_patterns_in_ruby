@@ -22,4 +22,10 @@ describe Hero do
       expect(subject.skills).to include(:intimidation)
     end
   end
+
+  describe '#print_stats' do
+    it 'prints default battle stats' do
+      expect(subject.print_stats).to eq "Damage: 10\nHealth: 5"
+    end
+  end
 end
