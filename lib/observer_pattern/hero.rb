@@ -12,7 +12,10 @@ module Observer
     end
 
     def discover(tile)
-      @cursed = true if tile.cursed?
+      if tile.cursed?
+        @cursed = true
+        tile.add_cursed self
+      end
     end
 
     def damage(hit)
