@@ -12,7 +12,7 @@ module Strategy
     end
 
     def print_stats
-      printer.print(self)
+      printer.print(damage, health, skills)
     end
 
   end
