@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Hero do
+describe Strategy::Hero do
   it 'has damage' do
     expect(subject.damage).to eq 10
   end
