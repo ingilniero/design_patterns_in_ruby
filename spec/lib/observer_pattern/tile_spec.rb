@@ -18,7 +18,7 @@ describe Observer::Tile do
 
   describe '#add_cursed' do
     it 'adds creature to cursed_creatures collection' do
-      expect { subject.add_cursed(hero) }.to change{ subject.cursed_creatures.size }.by(1)
+      expect { subject.subscribe(hero) }.to change{ subject.observers.size }.by(1)
     end
   end
 
@@ -27,8 +27,8 @@ describe Observer::Tile do
 
     context 'on one hero' do
       before do
-        subject.add_cursed(hero)
-        hero.should_receive(:damage)
+        subject.subscribe(hero)
+        hero.should_receive(:update)
       end
 
       it 'sends damage message to hero' do
@@ -42,8 +42,8 @@ describe Observer::Tile do
       before do
         hero.discover(subject)
         mage.discover(subject)
-        hero.should_receive(:damage)
-        mage.should_receive(:damage)
+        hero.should_receive(:update)
+        mage.should_receive(:update)
       end
 
       it 'sends damage message to each hero' do

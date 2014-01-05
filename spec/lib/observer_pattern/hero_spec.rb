@@ -2,14 +2,14 @@ require 'spec_helper'
 
 describe Observer::Hero do
 
-  let(:tile) { double('tile', cursed?: true, add_cursed: nil ) }
+  let(:tile) { double('tile', cursed?: true, subscribe: nil ) }
 
   it 'has default health equal to 10' do
     expect(subject.health).to eq 10
   end
 
   describe '#damage' do
-    it { expect{ subject.damage(4) }.to change{ subject.health }.by(-4) }
+    it { expect{ subject.update(4) }.to change{ subject.health }.by(-4) }
   end
 
   describe '#cursed?' do
@@ -28,7 +28,7 @@ describe Observer::Hero do
     context 'when tile is cursed' do
       before do
         tile.stub(:cursed?).and_return(true)
-        tile.should_receive(:add_cursed)
+        tile.should_receive(:subscribe)
       end
 
       it { expect { subject.discover(tile) }.to change{ subject.cursed? }.from(false).to(true) }

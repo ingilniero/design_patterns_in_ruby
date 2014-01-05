@@ -1,28 +1,28 @@
 module Observer
   class Tile
-    attr_reader :cursed_creatures
+    attr_reader :observers
 
     def initialize(attrs = {})
       @cursed = attrs.fetch(:cursed, false)
-      @cursed_creatures = []
+      @observers = []
     end
 
     def cursed?
       @cursed
     end
 
-    def add_cursed(creature)
-      @cursed_creatures << creature
+    def subscribe(observer)
+      @observers << observer
     end
 
     def activate_curse
-      damage_creatures
+      notify
     end
 
     private
 
-    def damage_creatures
-      cursed_creatures.each { |creature| creature.damage 4 }
+    def notify
+      observers.each { |observer| observer.update 4 }
     end
 
   end
