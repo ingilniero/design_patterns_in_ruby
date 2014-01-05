@@ -1,20 +1,19 @@
 module Strategy
   class Hero
     attr_reader :damage, :health, :skills
+    attr_accessor :printer
 
-    def initialize
+    def initialize(printer)
       @damage = 10
       @health = 5
+      @printer = printer
 
       @skills = [:stealth, :driving, :intimidation]
     end
 
     def print_stats
-      "Damage: #{damage}\nHealth: #{health}"
+      printer.print(self)
     end
 
-    def print_skills
-      skills.inject(""){ |result, skill| result + skill.to_s.capitalize + "\n" }
-    end
   end
 end

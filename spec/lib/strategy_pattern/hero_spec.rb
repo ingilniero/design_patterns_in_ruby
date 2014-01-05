@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 describe Strategy::Hero do
+  subject { Strategy::Hero.new Strategy::BattleStats.new }
+
   it 'has damage' do
     expect(subject.damage).to eq 10
   end
@@ -24,14 +26,9 @@ describe Strategy::Hero do
   end
 
   describe '#print_stats' do
-    it 'prints default battle stats' do
-      expect(subject.print_stats).to eq "Damage: 10\nHealth: 5"
-    end
-  end
-
-  describe '#print_skills' do
-    it 'prints hero skills' do
-      expect(subject.print_skills).to eq "Stealth\nDriving\nIntimidation\n"
+    it 'sends print message to printer' do
+      subject.printer.should_receive(:print)
+      subject.print_stats
     end
   end
 end
