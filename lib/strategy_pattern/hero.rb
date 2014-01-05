@@ -12,5 +12,9 @@ module Strategy
     def print_stats
       "Damage: #{damage}\nHealth: #{health}"
     end
+
+    def print_skills
+      skills.inject(""){ |result, skill| result + skill.to_s.capitalize + "\n" }
+    end
   end
 end
