@@ -28,4 +28,10 @@ describe Strategy::Hero do
       expect(subject.print_stats).to eq "Damage: 10\nHealth: 5"
     end
   end
+
+  describe '#print_skills' do
+    it 'prints hero skills' do
+      expect(subject.print_skills).to eq "Stealth\nDriving\nIntimidation\n"
+    end
+  end
 end
