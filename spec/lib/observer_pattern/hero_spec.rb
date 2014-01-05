@@ -17,7 +17,7 @@ describe Observer::Hero do
 
   describe '#discover' do
     it 'changes cursed state to true' do
-      expect {subject.discover }.to change(subject.cursed?).from(false).to(true)
+      expect { subject.discover(tile) }.to change{ subject.cursed? }.from(false).to(true)
     end
   end
 
