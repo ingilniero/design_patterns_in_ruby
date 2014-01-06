@@ -22,4 +22,17 @@ describe Iterator::Inventory do
       end.to change { subject.items.size }.by(2)
     end
   end
+
+  describe '#total_cost' do
+    before do
+      item1.update_cost 10
+      item2.update_cost 20
+      subject.add item1
+      subject.add item2
+    end
+
+    it 'returns the sum of all items cost' do
+      expect(subject.total_cost).to be 30
+    end
+  end
 end
