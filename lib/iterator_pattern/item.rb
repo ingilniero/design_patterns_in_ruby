@@ -5,5 +5,9 @@ module Iterator
     def initialize
       @cost = 0
     end
+
+    def update_cost(amount)
+      @cost = amount
+    end
   end
 end
