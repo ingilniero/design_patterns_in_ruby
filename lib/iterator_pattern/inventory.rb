@@ -1,5 +1,7 @@
 module Iterator
   class Inventory
+    include Enumerable
+
     attr_reader :items
 
     def initialize
@@ -11,11 +13,7 @@ module Iterator
     end
 
     def total_cost
-      result = 0
-      each do |item|
-        result += item.cost
-      end
-      result
+      inject(0){ |sum, item| sum += item.cost }
     end
 
     def each(&block)

@@ -35,4 +35,17 @@ describe Iterator::Inventory do
       expect(subject.total_cost).to be 30
     end
   end
+
+  describe '#most_expensive' do
+    before do
+      item1.update_cost 10
+      item2.update_cost 20
+      subject.add item1
+      subject.add item2
+    end
+
+    it 'can provide the most expensive item' do
+      expect(subject.max).to eq item2
+    end
+  end
 end

@@ -9,5 +9,9 @@ module Iterator
     def update_cost(amount)
       @cost = amount
     end
+
+    def <=>(other)
+      cost <=> other.cost
+    end
   end
 end
