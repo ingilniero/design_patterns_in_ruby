@@ -9,7 +9,7 @@ module Factory
     end
 
     def create
-      Hero.new
+      raise 'You must implement create method'
     end
 
   end
