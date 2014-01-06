@@ -4,7 +4,6 @@ module Iterator
 
     def initialize
       @items = []
-      @iterator = Iterator::InventoryIterator.new self
     end
 
     def add(item)
@@ -13,10 +12,18 @@ module Iterator
 
     def total_cost
       result = 0
-      while @iterator.has_next?
-        result += @iterator.next.cost
+      each do |item|
+        result += item.cost
       end
       result
+    end
+
+    def each
+      i = 0
+      while i < @items.size
+        yield(@items[i])
+        i += 1
+      end
     end
 
   end
