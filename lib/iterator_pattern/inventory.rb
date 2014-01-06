@@ -18,12 +18,8 @@ module Iterator
       result
     end
 
-    def each
-      i = 0
-      while i < @items.size
-        yield(@items[i])
-        i += 1
-      end
+    def each(&block)
+      @items.each(&block)
     end
 
   end
