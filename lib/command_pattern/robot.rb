@@ -10,5 +10,9 @@ module Command
     def add(command)
       @queue << command
     end
+
+    def execute
+      @queue.inject("\n"){ |result, command| result + command.execute + "\n" }
+    end
   end
 end
