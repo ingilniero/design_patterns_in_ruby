@@ -5,11 +5,12 @@ module Factory
     def initialize(attrs = {})
       @members = []
       number = attrs.fetch(:number,0)
-      number.times { members << create }
+      type = attrs.fetch(:type, :unknow)
+      number.times { members << create(type) }
     end
 
-    def create
-      raise 'You must implement create method'
+    def create(type)
+      self.class.const_get(type.to_s.capitalize).new
     end
 
   end
