@@ -14,6 +14,7 @@ require_relative '../lib/command_pattern/calibrate_driver_command'
 require_relative '../lib/command_pattern/test_complier_command'
 require_relative '../lib/command_pattern/install_regulator_command'
 require_relative '../lib/command_pattern/robot'
+require_relative '../lib/command_pattern/reactor'
 
 RSpec.configure do |config|
   config.treat_symbols_as_metadata_keys_with_true_values = true
