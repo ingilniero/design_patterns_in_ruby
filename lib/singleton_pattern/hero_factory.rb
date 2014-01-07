@@ -1,7 +1,9 @@
 module Singleton
   class HeroFactory
+    @@instance = Singleton::HeroFactory.new
+
     def self.instance
-      Singleton::HeroFactory.new
+      @@instance
     end
 
     def create_warrior
