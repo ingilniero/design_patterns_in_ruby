@@ -1,10 +1,8 @@
+require 'singleton'
+
 module Singleton
   class HeroFactory
-    @@instance = nil
-
-    def self.instance
-      @@instance ||= Singleton::HeroFactory.send(:new)
-    end
+    include Singleton
 
     def create_warrior
       Warrior.new
@@ -13,7 +11,5 @@ module Singleton
     def create_mage
       Mage.new
     end
-
-    private_class_method :new
   end
 end
