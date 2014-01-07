@@ -7,7 +7,8 @@ module Builder
     end
 
     def add_tiles(type, number)
-      @board.tiles = Builder::TileFactory.create_plain_tiles(number)
+      message = "create_#{type}_tiles"
+      @board.tiles = Builder::TileFactory.send(message, number)
     end
   end
 end
