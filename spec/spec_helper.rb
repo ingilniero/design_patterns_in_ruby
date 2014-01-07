@@ -22,6 +22,7 @@ require_relative '../lib/builder_pattern/tile_factory'
 require_relative '../lib/builder_pattern/monster_factory'
 require_relative '../lib/builder_pattern/board_builder'
 require_relative '../lib/composite_pattern/encounter'
+require_relative '../lib/composite_pattern/puzzle'
 
 RSpec.configure do |config|
   config.treat_symbols_as_metadata_keys_with_true_values = true
