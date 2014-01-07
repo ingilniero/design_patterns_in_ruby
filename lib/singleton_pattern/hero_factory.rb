@@ -3,7 +3,7 @@ module Singleton
     @@instance = nil
 
     def self.instance
-      @@instance ||= Singleton::HeroFactory.new
+      @@instance ||= Singleton::HeroFactory.send(:new)
     end
 
     def create_warrior
@@ -13,5 +13,7 @@ module Singleton
     def create_mage
       Mage.new
     end
+
+    private_class_method :new
   end
 end

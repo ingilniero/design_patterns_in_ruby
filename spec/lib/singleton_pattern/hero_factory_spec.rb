@@ -14,5 +14,9 @@ describe Singleton::HeroFactory do
     it 'returns always the same instance' do
       expect(hero_factory).to be another_factory
     end
+
+    it 'doesn\'t allows use of new method' do
+      expect { Singleton::HeroFactory.new }.to raise_exception
+    end
   end
 end
