@@ -18,6 +18,7 @@ require_relative '../lib/command_pattern/reactor'
 require_relative '../lib/factory_pattern/party'
 require_relative '../lib/singleton_pattern/hero_factory'
 require_relative '../lib/builder_pattern/board'
+require_relative '../lib/builder_pattern/tile_factory'
 
 RSpec.configure do |config|
   config.treat_symbols_as_metadata_keys_with_true_values = true
