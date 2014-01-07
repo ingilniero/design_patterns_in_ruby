@@ -4,7 +4,7 @@ describe Builder::Board do
   let(:tiles) { double('tiles') }
   let(:monsters) { double('monsters') }
 
-  let(:board) { Builder::Board.new 3, 3, :easy, tiles, monsters }
+  let(:board) { Builder::Board.new tiles: tiles, monsters: monsters }
 
   it 'has a width' do
     expect(board.width).to eq 3
