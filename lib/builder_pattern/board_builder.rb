@@ -10,5 +10,10 @@ module Builder
       message = "create_#{type}_tiles"
       @board.tiles = Builder::TileFactory.send(message, number)
     end
+
+    def add_monsters(type, number)
+      message = "create_#{type}s"
+      @board.monsters = Builder::MonsterFactory.send(message, number)
+    end
   end
 end

@@ -28,4 +28,25 @@ describe Builder::BoardBuilder do
       end
     end
   end
+
+  describe '#add_monsters' do
+    context 'orcs' do
+      before { builder.add_monsters(:orc, 2) }
+
+      it 'creates orcs' do
+        expect(board.monsters.count{ |monster| monster.class == Builder::Orc })
+        .to eq 2
+      end
+    end
+
+    context 'globins' do
+      before { builder.add_monsters(:globin, 2) }
+
+      it 'creates globins' do
+        expect(board.monsters.
+               count{ |monster| monster.class == Builder::Goblin })
+        .to eq 2
+      end
+    end
+  end
 end
