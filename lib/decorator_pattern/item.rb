@@ -2,13 +2,16 @@ module Decorator
   class CommonItem
     attr_reader :price, :description
 
-    def initialize(is_magic = false)
+    def initialize(is_magic = false, is_masterpiece = false)
       @price = 10
       @description = 'Item.'
 
       if is_magic
         @price *= 3
         @description += 'Magic.'
+      elsif is_masterpiece
+        @price *= 2
+        @description += 'Masterpiece.'
       end
     end
 
