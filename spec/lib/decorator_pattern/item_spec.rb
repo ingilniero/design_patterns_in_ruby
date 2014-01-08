@@ -13,8 +13,8 @@ describe Decorator::CommonItem do
     expect(subject.description).to eq 'Item.'
   end
 
-  it 'can be used' do
-    expect(subject).to respond_to(:use)
+  describe '#use' do
+    it { expect(subject.use).to eq 'Item used' }
   end
 
   describe 'magic items' do

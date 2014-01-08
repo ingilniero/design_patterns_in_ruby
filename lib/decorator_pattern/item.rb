@@ -18,7 +18,7 @@ module Decorator
     end
 
     def use
-
+      'Item used'
     end
   end
 end
