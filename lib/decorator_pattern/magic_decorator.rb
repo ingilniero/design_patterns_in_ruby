@@ -1,5 +1,10 @@
+require 'forwardable'
+
 module Decorator
   class MagicDecorator
+    extend Forwardable
+
+    def_delegator :@object, :use
 
     def initialize(object)
       @object = object
@@ -11,10 +16,6 @@ module Decorator
 
     def description
       @object.description + 'Magic.'
-    end
-
-    def use
-      @object.use
     end
 
   end
