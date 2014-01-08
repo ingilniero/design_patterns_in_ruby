@@ -1,6 +1,6 @@
 module Adapter
   class OldQuest
-    attr_reader :difficulty, :exp
+    attr_accessor :difficulty, :exp
 
     def initialize
       @difficulty = 2
