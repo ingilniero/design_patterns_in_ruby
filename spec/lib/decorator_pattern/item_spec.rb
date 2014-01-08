@@ -27,7 +27,7 @@ describe Decorator::CommonItem do
   end
 
   describe 'full item' do
-    it 'is three times more expensive than common item' do
+    it 'is six times more expensive than common item' do
       expect(full_item.price).to eq subject.price * 6
     end
 
