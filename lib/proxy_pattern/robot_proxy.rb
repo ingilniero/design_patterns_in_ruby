@@ -4,12 +4,8 @@ module Proxy
       @robot = robot
     end
 
-    def add
-      @robot.add
-    end
-
-    def execute
-      @robot.execute
+    def method_missing(name, *args)
+      @robot.send(name, *args)
     end
   end
 end
