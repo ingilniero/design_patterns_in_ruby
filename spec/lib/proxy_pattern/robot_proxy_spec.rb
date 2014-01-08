@@ -5,7 +5,9 @@ describe Proxy::RobotProxy do
   let(:robot) { double('robot', add: [], queue: [], execute: true) }
   let(:operator) { double('operator', vehicles: [ :robot ]) }
 
-  let(:robot_proxy) { Proxy::RobotProxy.new robot, operator }
+  let(:robot_proxy) { Proxy::RobotProxy.new operator }
+
+  before{ Command::Robot.stub(:new).and_return(robot) }
 
   describe '#add' do
     before { robot.should_receive(:add) }
