@@ -8,4 +8,8 @@ describe Decorator::CommonItem do
   it 'has description' do
     expect(subject.description).to eq 'Item.'
   end
+
+  it 'can be used' do
+    expect(subject).to respond_to(:use)
+  end
 end

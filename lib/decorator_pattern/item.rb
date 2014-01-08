@@ -6,5 +6,9 @@ module Decorator
       @price = 10
       @description = 'Item.'
     end
+
+    def use
+
+    end
   end
 end
