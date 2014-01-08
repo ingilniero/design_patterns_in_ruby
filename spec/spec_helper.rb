@@ -27,6 +27,7 @@ require_relative '../lib/composite_pattern/diplomacy'
 require_relative '../lib/composite_pattern/composite_quest'
 require_relative '../lib/composite_pattern/quest'
 require_relative '../lib/composite_pattern/mega_quest'
+require_relative '../lib/decorator_pattern/item'
 
 RSpec.configure do |config|
   config.treat_symbols_as_metadata_keys_with_true_values = true
