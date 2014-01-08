@@ -31,6 +31,8 @@ require_relative '../lib/decorator_pattern/item'
 require_relative '../lib/decorator_pattern/magic_decorator'
 require_relative '../lib/decorator_pattern/masterpiece_decorator'
 require_relative '../lib/proxy_pattern/robot_proxy'
+require_relative '../lib/adapter_pattern/quest'
+require_relative '../lib/adapter_pattern/hero'
 
 RSpec.configure do |config|
   config.treat_symbols_as_metadata_keys_with_true_values = true
