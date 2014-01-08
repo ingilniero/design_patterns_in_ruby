@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 describe Decorator::CommonItem do
-  let(:magic_item) { Decorator::CommonItem.new true }
   let(:masterpice_item) { Decorator::CommonItem.new false, true }
   let(:full_item) { Decorator::CommonItem.new true, true }
 
@@ -15,16 +14,6 @@ describe Decorator::CommonItem do
 
   describe '#use' do
     it { expect(subject.use).to eq 'Item used' }
-  end
-
-  describe 'magic items' do
-    it 'is three times more expensive than common item' do
-      expect(magic_item.price).to eq subject.price * 3
-    end
-
-    it 'has another description' do
-      expect(magic_item.description).to eq subject.description + "Magic."
-    end
   end
 
   describe 'masterpice item' do
